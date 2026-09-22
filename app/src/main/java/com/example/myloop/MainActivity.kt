@@ -47,7 +47,25 @@ fun MainScreen() {
 
         Spacer(Modifier.height(8.dp))
 
-        Button(onClick = {  }) {
+        Button(onClick = {   val a = input.trim().replace(',', '.').toDoubleOrNull()
+
+            if (a == null) {
+                result = "Введите корректное число"
+            } else if (a > 7.0) {
+                result = "При a > 7 результат не может быть получен"
+            } else {
+                var sum = 0.0
+                var n = 0
+
+                while (sum <= a) {
+                    n++
+                    sum += 1.0 / n
+                }
+
+                result = "Первое S > a: S$n = ${"%.4f".format(sum)}\n" +
+                        "Последнее слагаемое: 1/$n\n" +
+                        "Количество повторений: $n"
+            }}) {
             Text("OK")
         }
 
