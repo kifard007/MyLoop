@@ -28,10 +28,24 @@ class MainActivity : ComponentActivity() {
 fun MainScreen() {
     var input by remember { mutableStateOf("") }
     var result by remember { mutableStateOf("Результат") }
-    Text(
-        text = "Введите число a:",
-        style = MaterialTheme.typography.titleMedium
-    )
+    Column() {
+
+
+        Text(
+            text = "Введите число a:",
+            style = MaterialTheme.typography.titleMedium
+        )
+
+        Spacer(Modifier.height(8.dp))
+
+        OutlinedTextField(
+            value = input,
+            onValueChange = { input = it },
+            label = { Text("например: 2.5") },
+            modifier = Modifier.fillMaxWidth()
+        )
+    }
+
 }
 
 @Preview(showBackground = true, widthDp = 360, heightDp = 640)
