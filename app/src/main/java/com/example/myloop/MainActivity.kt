@@ -26,7 +26,12 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainScreen() {
-
+    var input by remember { mutableStateOf("") }
+    var result by remember { mutableStateOf("Результат") }
+    Text(
+        text = "Введите число a:",
+        style = MaterialTheme.typography.titleMedium
+    )
 }
 
 @Preview(showBackground = true, widthDp = 360, heightDp = 640)
