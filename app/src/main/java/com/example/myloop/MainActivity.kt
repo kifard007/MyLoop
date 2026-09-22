@@ -44,6 +44,19 @@ fun MainScreen() {
             label = { Text("например: 2.5") },
             modifier = Modifier.fillMaxWidth()
         )
+
+        Spacer(Modifier.height(8.dp))
+
+        Button(onClick = {  }) {
+            Text("OK")
+        }
+
+        Spacer(Modifier.height(16.dp))
+
+        Text(
+            text = result,
+            style = MaterialTheme.typography.bodyLarge
+        )
     }
 
 }
